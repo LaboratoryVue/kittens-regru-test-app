@@ -1,5 +1,7 @@
 <template>
-  <router-link :to="`/preview/${tile.id}`" class="tile" :class="tileType">
+  <router-link :to="`/preview/${tile.id}`" class="tile" :class="type" :style="{'background-image': `url(${tile.urls.regular})`}">
+  <!-- <router-link :to="`/preview/${tile.id}`" class="tile" :class="tileType"> -->
+    <!-- <img :src="tile.urls.regular" :alt="tile.title"> -->
     <h3 class="tile__caption">{{ tile.title }} {{ tile.id }}</h3>
     <p class="tile__description">{{ tile.description }}</p>
     <p class="tile__text">{{ tile.text | trancate }}</p>
@@ -21,7 +23,7 @@ export default {
     }
   },
   computed: {
-    tileType() {
+    type() {
       return this.tile.type === 'normal' ? 'normal' : 'double';
     }
   }
@@ -37,6 +39,8 @@ export default {
   padding: 2rem 1rem;
   text-decoration: none;
   color: black;
+  background-position: 0 0;
+  background-size: cover;
 
   &__caption {
     text-transform: capitalize;
@@ -55,9 +59,9 @@ export default {
   }
 }
 .normal {
-  background-color: pink;
+  // background-color: pink;
 }
 .double {
-  background-color: greenyellow;
+  // background-color: greenyellow;
 }
 </style>

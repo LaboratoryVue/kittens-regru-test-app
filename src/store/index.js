@@ -11,11 +11,24 @@ const state = {
 
 const mutations = {
   INIT_TILES(state) {
-    state.tiles = tiles.tiles;
-    axios
-      .get()
-      .then(response => console.log(response.data))
-      .catch(error => console.log(error));
+    const temp = tiles.tiles;
+    if (!temp) return;
+    const config = {
+      params: {
+        client_id:
+          '98ebd7d54e49d7201ecfdf37a2434c0ac93121312666ad26d689410c401dc46b',
+        per_page: temp.length,
+        query: 'cat',
+        orientation: 'squarish'
+      }
+    };
+    axios.get('photos', config).then(response => {
+      for (let i = 0; i < temp.length; i += 1) {
+        temp[i].urls = response.data.results[i].urls;
+      }
+      state.tiles = temp;
+      console.log(state.tiles);
+    });
   }
 };
 

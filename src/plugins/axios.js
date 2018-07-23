@@ -1,5 +1,7 @@
 import axios from 'axios';
-const URL = 'http://placekitten.com/400/400?image=10';
+// const URL = 'https://api.unsplash.com';
+const URL = 'https://api.unsplash.com/search';
+// const URL = 'https://api.unsplash.com/search/photos';
 
 export default axios.create({
   baseURL: URL
