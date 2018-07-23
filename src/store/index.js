@@ -27,7 +27,6 @@ const mutations = {
         temp[i].urls = response.data.results[i].urls;
       }
       state.tiles = temp;
-      console.log(state.tiles);
     });
   }
 };

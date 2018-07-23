@@ -8,7 +8,7 @@ import store from '@/store/index';
 import trancate from '@/filters/trancate';
 
 Vue.config.productionTip = false;
-// Vue.filters('trancate', trancate);
+Vue.filter('trancate', trancate);
 
 new Vue({
   router,

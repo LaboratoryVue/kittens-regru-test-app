@@ -1,7 +1,5 @@
 <template>
   <router-link :to="`/preview/${tile.id}`" class="tile" :class="type" :style="{'background-image': `url(${tile.urls.regular})`}">
-  <!-- <router-link :to="`/preview/${tile.id}`" class="tile" :class="tileType"> -->
-    <!-- <img :src="tile.urls.regular" :alt="tile.title"> -->
     <h3 class="tile__caption">{{ tile.title }} {{ tile.id }}</h3>
     <p class="tile__description">{{ tile.description }}</p>
     <p class="tile__text">{{ tile.text | trancate }}</p>
@@ -15,11 +13,6 @@ export default {
     tile: {
       type: Object,
       default: () => {}
-    }
-  },
-  filters: {
-    trancate(value) {
-      return value.slice(0, 172);
     }
   },
   computed: {
