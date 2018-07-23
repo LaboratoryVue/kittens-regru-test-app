@@ -1,7 +1,7 @@
 <template>
-  <div class="home">
+  <section class="home">
     <tiles />
-  </div>
+  </section>
 </template>
 
 <script>
@@ -16,8 +16,6 @@ export default {
 
 <style lang="scss" scoped>
 .home {
-  display: flex;
-  flex-wrap: wrap;
-  padding: 10px;
+  //
 }
 </style>

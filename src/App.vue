@@ -1,8 +1,10 @@
 <template>
-  <div id="app">
+  <section id="app">
     <navigation />
-    <router-view />
-  </div>
+    <div class="wrapper">
+      <router-view />
+    </div>
+  </section>
 </template>
 
 <script>
@@ -17,11 +19,13 @@ export default {
 
 
 <style lang="scss">
-*, *:before, *:after {
+*,
+*:before,
+*:after {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
- }
+}
 
 body {
   margin: 0 auto;
@@ -31,5 +35,8 @@ body {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+.wrapper {
+  padding: 1rem 2rem;
 }
 </style>

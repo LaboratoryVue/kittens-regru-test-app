@@ -28,12 +28,15 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+// PREVIEW
 .preview {
   padding: 2rem 1rem;
 
+  // PREVIEW BODY
   &__body {
     margin-bottom: 2rem;
 
+    // PREVIEW CONTENT
     & .content {
       //
       &__title {
@@ -57,6 +60,7 @@ export default {
     }
   }
 
+  // PREVIEW FOOTER
   &__footer {
     //
     & .control {

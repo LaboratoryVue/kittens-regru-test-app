@@ -1,5 +1,20 @@
 <template>
-  <div class="about">
-    <h1>This is an about page</h1>
-  </div>
+  <section class="about">
+    <h2 class="about__title">page about</h2>
+  </section>
 </template>
+
+<script>
+export default {
+  name: 'PageAbout'
+};
+</script>
+
+<style lang="scss" scoped>
+.about {
+  //
+  &__title {
+    text-transform: capitalize;
+  }
+}
+</style>

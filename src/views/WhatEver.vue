@@ -1,5 +1,7 @@
 <template>
-  <h2>WhatEver</h2>
+  <section class="whatever">
+    <h2 class="whatever__title">page what ever</h2>
+  </section>
 </template>
 
 <script>
@@ -9,5 +11,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-//
+.whatever {
+  //
+  &__title {
+    text-transform: capitalize;
+  }
+}
 </style>
