@@ -17,6 +17,9 @@ const mutations = {
 const getters = {
   getTiles(state) {
     return state.tiles;
+  },
+  getSelectedTile(state) {
+    return id => state.tiles.find(tile => tile.id === Number(id));
   }
 };
 
