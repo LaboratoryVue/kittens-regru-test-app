@@ -1,5 +1,5 @@
 <template>
-  <section class="preview">
+  <section class="preview" :style="{'background-image': `url(${preview.urls.regular})`}">
     <div class="preview__body content">
       <h3 class="content__title">{{ preview.title }} {{ preview.id }}</h3>
       <p class="content__description">{{ preview.description }}</p>
@@ -31,6 +31,8 @@ export default {
 // PREVIEW
 .preview {
   padding: 2rem 1rem;
+  background-position: center;
+  background-size: cover;
 
   // PREVIEW BODY
   &__body {
@@ -56,6 +58,10 @@ export default {
         font-size: 0.86rem;
         line-height: 1.3;
         margin: 0 0 1rem;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
       }
     }
   }

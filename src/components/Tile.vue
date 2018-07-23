@@ -1,5 +1,5 @@
 <template>
-  <router-link :to="`/preview/${tile.id}`" class="tile" :class="type" :style="{'background-image': `url(${tile.urls.regular})`}">
+  <router-link :to="`/preview/${tile.id}`" class="tile tile--block tile--link" :class="type" :style="{'background-image': `url(${tile.urls.regular})`}">
     <h3 class="tile__caption">{{ tile.title }} {{ tile.id }}</h3>
     <p class="tile__description">{{ tile.description }}</p>
     <p class="tile__text">{{ tile.text | trancate }}</p>
@@ -17,7 +17,7 @@ export default {
   },
   computed: {
     type() {
-      return this.tile.type === 'normal' ? 'normal' : 'double';
+      return this.tile.type === 'normal' ? 'tile--normal' : 'tile--double';
     }
   }
 };
@@ -25,15 +25,33 @@ export default {
 
 <style lang="scss" scoped>
 .tile {
-  display: block;
-  border: 1px solid #000;
-  border-radius: 0.2rem;
-  margin: 0.4rem;
-  padding: 2rem 1rem;
-  text-decoration: none;
-  color: black;
-  background-position: 0 0;
-  background-size: cover;
+  flex: auto;
+  height: 250px;
+  min-width: 150px;
+  margin: 0 8px 8px 0;
+
+  &--block {
+    display: block;
+    padding: 2rem 1rem;
+    border: 1px solid #000;
+    border-radius: 0.2rem;
+  }
+
+  &--link {
+    text-decoration: none;
+    color: black;
+    // background-position: 0 0;
+    background-position: center;
+    background-size: cover;
+  }
+
+  &--normal {
+    width: 250px;
+  }
+
+  &--double {
+    width: 500px;
+  }
 
   &__caption {
     text-transform: capitalize;
@@ -50,11 +68,5 @@ export default {
     font-style: italic;
     font-size: 0.85rem;
   }
-}
-.normal {
-  // background-color: pink;
-}
-.double {
-  // background-color: greenyellow;
 }
 </style>

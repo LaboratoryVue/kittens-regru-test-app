@@ -13,7 +13,6 @@ Vue.filter('trancate', trancate);
 new Vue({
   router,
   store,
-  // filters,
   render: h => h(App),
   mounted() {
     this.$store.dispatch('initData');

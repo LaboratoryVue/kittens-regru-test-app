@@ -32,9 +32,11 @@ const mutations = {
 };
 
 const getters = {
+  // GET ALL TILES
   getTiles(state) {
     return state.tiles;
   },
+  // GET SELECTED TILE
   getSelectedTile(state) {
     return id => state.tiles.find(tile => tile.id === Number(id));
   }
