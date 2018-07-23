@@ -1,6 +1,7 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
 import tiles from '@/api/tiles.json';
+import axios from '@/plugins/axios.js';
 
 Vue.use(Vuex);
 
@@ -11,6 +12,10 @@ const state = {
 const mutations = {
   INIT_TILES(state) {
     state.tiles = tiles.tiles;
+    axios
+      .get()
+      .then(response => console.log(response.data))
+      .catch(error => console.log(error));
   }
 };
 
