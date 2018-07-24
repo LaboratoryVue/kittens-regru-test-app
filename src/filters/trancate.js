@@ -1,1 +1,1 @@
-export default value => value.slice(0, 172);
+export default value => value.slice(0, 100);

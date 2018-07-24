@@ -35,7 +35,7 @@
     },
     {
       "id": 5,
-      "type": "normal",
+      "type": "double",
       "title": "Lorem Ipsum",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       "text":

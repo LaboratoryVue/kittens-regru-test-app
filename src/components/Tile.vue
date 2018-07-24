@@ -1,8 +1,10 @@
 <template>
   <router-link :to="`/preview/${tile.id}`" class="tile tile--block tile--link" :class="type" :style="{'background-image': `url(${tile.urls.regular})`}">
-    <h3 class="tile__caption">{{ tile.title }} {{ tile.id }}</h3>
-    <p class="tile__description">{{ tile.description }}</p>
-    <p class="tile__text">{{ tile.text | trancate }}</p>
+    <section class="tile__underlay">
+      <h3 class="tile__caption">{{ tile.title }} {{ tile.id }}</h3>
+      <p class="tile__description">{{ tile.description }}</p>
+      <p class="tile__text">{{ tile.text | trancate }}</p>
+    </section>
   </router-link>
 </template>
 
@@ -25,32 +27,26 @@ export default {
 
 <style lang="scss" scoped>
 .tile {
-  flex: auto;
-  height: 250px;
-  min-width: 150px;
-  margin: 0 8px 8px 0;
+  display: flex;
+  flex-direction: column;
 
   &--block {
-    display: block;
-    padding: 2rem 1rem;
-    border: 1px solid #000;
-    border-radius: 0.2rem;
+    min-height: 250px;
+    padding: 1rem;
+    border: 4px solid white;
   }
 
   &--link {
     text-decoration: none;
     color: black;
-    // background-position: 0 0;
     background-position: center;
     background-size: cover;
   }
 
-  &--normal {
-    width: 250px;
-  }
-
-  &--double {
-    width: 500px;
+  &__underlay {
+    background-color: rgba(255, 255, 255, 0.4);
+    padding: 1rem;
+    border-radius: 0.2rem;
   }
 
   &__caption {
@@ -59,14 +55,43 @@ export default {
   }
 
   &__description {
-    margin: 0 0 0.8rem;
+    margin: 0 0 0.6rem;
     font-weight: 700;
-    font-size: 0.95rem;
+    font-size: 0.8rem;
   }
 
   &__text {
     font-style: italic;
     font-size: 0.85rem;
+    margin: 0 0 0.6rem;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+// MEDIA QUERIES
+@media all and (max-width: 320px) {
+  .tile--normal,
+  .tile--double {
+    width: 100%;
+  }
+}
+
+@media all and (min-width: 321px) and (max-width: 480px) {
+  .tile--normal,
+  .tile--double {
+    width: calc(100% / 2);
+  }
+}
+
+@media all and (min-width: 481px) {
+  .tile--normal {
+    width: calc(100% / 3);
+  }
+  .tile--double {
+    width: calc(100% / 2);
   }
 }
 </style>

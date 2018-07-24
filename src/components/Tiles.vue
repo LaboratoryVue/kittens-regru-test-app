@@ -23,7 +23,6 @@ export default {
 .tiles {
   display: flex;
   flex-flow: row wrap;
-  margin-left: -8px;
   width: 100%;
 }
 </style>
