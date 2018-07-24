@@ -2,7 +2,9 @@
   <section id="app">
     <navigation />
     <div class="wrapper">
-      <router-view />
+      <transition name="fade" mode="out-in">
+        <router-view />
+      </transition>
     </div>
   </section>
 </template>
@@ -43,5 +45,13 @@ body {
 }
 .wrapper {
   padding: 1rem 2rem;
+}
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s;
+}
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
 }
 </style>
