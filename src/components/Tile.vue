@@ -30,9 +30,11 @@ export default {
 .tile {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
 
   &--block {
-    min-height: 250px;
+    min-height: 220px;
     padding: 1rem;
     border: 4px solid white;
   }
@@ -61,12 +63,14 @@ export default {
       &__caption {
         text-transform: capitalize;
         margin: 0 0 1rem;
+        text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.4);
       }
 
       &__description {
         margin: 0 0 0.6rem;
         font-weight: 700;
         font-size: 0.8rem;
+        text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.4);
       }
 
       &__text {
@@ -83,21 +87,21 @@ export default {
 }
 
 // MEDIA QUERIES
-@media all and (max-width: 320px) {
+@media all and (max-width: 480px) {
   .tile--normal,
   .tile--double {
     width: 100%;
   }
 }
 
-@media all and (min-width: 321px) and (max-width: 480px) {
+@media all and (min-width: 481px) and (max-width: 1024px) {
   .tile--normal,
   .tile--double {
     width: calc(100% / 2);
   }
 }
 
-@media all and (min-width: 481px) {
+@media all and (min-width: 1025px) {
   .tile--normal {
     width: calc(100% / 3);
   }
