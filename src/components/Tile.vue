@@ -25,6 +25,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import '@/assets/_variables';
 // TILE
 .tile {
   display: flex;
@@ -76,21 +77,21 @@ export default {
 }
 
 // MEDIA QUERIES
-@media all and (max-width: 480px) {
+@media all and (max-width: $medium) {
   .tile--normal,
   .tile--double {
     width: 100%;
   }
 }
 
-@media all and (min-width: 481px) and (max-width: 1024px) {
+@media all and (min-width: $medium) and (max-width: $large) {
   .tile--normal,
   .tile--double {
     width: calc(100% / 2);
   }
 }
 
-@media all and (min-width: 1025px) {
+@media all and (min-width: $large) {
   .tile--normal {
     width: calc(100% / 3);
   }

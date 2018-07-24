@@ -21,6 +21,8 @@ export default {
 
 
 <style lang="scss">
+@import '@/assets/_variables';
+// BASE STYLES
 *,
 *:before,
 *:after {
@@ -36,20 +38,26 @@ body {
 
 body {
   margin: 0 auto;
-  max-width: 960px;
+  max-width: $base-width;
 }
+
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+// WRAPPER
 .wrapper {
   padding: 1rem 2rem;
 }
+
+// ANIMATE ROUTES
 .fade-enter-active,
 .fade-leave-active {
   transition: opacity 0.5s;
 }
+
 .fade-enter,
 .fade-leave-to {
   opacity: 0;
