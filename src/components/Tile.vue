@@ -3,7 +3,6 @@
     <section class="tile__underlay content">
       <h3 class="content__caption">{{ tile.title }} {{ tile.id }}</h3>
       <p class="content__description">{{ tile.description }}</p>
-      <p class="content__text">{{ tile.text | trancate }}</p>
     </section>
   </router-link>
 </template>
@@ -71,16 +70,6 @@ export default {
         font-weight: 700;
         font-size: 0.8rem;
         text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.4);
-      }
-
-      &__text {
-        font-style: italic;
-        font-size: 0.85rem;
-        margin: 0 0 0.6rem;
-
-        &:last-child {
-          margin-bottom: 0;
-        }
       }
     }
   }

@@ -37,6 +37,9 @@ export default {
   // PREVIEW BODY
   &__body {
     margin-bottom: 2rem;
+    background-color: rgba(255, 255, 255, 0.4);
+    padding: 2rem 1rem;
+    border-radius: 0.4rem;
 
     // PREVIEW CONTENT
     & .content {
@@ -45,12 +48,14 @@ export default {
         text-transform: capitalize;
         margin: 0 0 1rem;
         font-size: 1.4rem;
+        text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.4);
       }
 
       &__description {
         margin: 0 0 1rem;
         font-weight: 700;
         font-size: 0.9rem;
+        text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.4);
       }
 
       &__text {
@@ -74,6 +79,17 @@ export default {
       &__button {
         cursor: pointer;
         text-transform: capitalize;
+        border: none;
+        border-radius: 0.2rem;
+        padding: 0.6rem 1rem;
+        background-color: lightgrey;
+        font-weight: 700;
+        text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.4);
+        transition: background-color 0.2s;
+
+        &:hover {
+          background-color: darken(lightgrey, 15%);
+        }
       }
     }
   }
