@@ -1,9 +1,9 @@
 <template>
   <router-link :to="`/preview/${tile.id}`" class="tile tile--block tile--link" :class="type" :style="{'background-image': `url(${tile.urls.regular})`}">
-    <section class="tile__underlay">
-      <h3 class="tile__caption">{{ tile.title }} {{ tile.id }}</h3>
-      <p class="tile__description">{{ tile.description }}</p>
-      <p class="tile__text">{{ tile.text | trancate }}</p>
+    <section class="tile__underlay content">
+      <h3 class="content__caption">{{ tile.title }} {{ tile.id }}</h3>
+      <p class="content__description">{{ tile.description }}</p>
+      <p class="content__text">{{ tile.text | trancate }}</p>
     </section>
   </router-link>
 </template>
@@ -26,6 +26,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+// TILE
 .tile {
   display: flex;
   flex-direction: column;
@@ -41,32 +42,42 @@ export default {
     color: black;
     background-position: center;
     background-size: cover;
+    transition: all 0.2s;
+
+    &:hover {
+      transform: scale(1.1);
+    }
   }
 
+  // TILE UNDERLAY
   &__underlay {
     background-color: rgba(255, 255, 255, 0.4);
     padding: 1rem;
     border-radius: 0.2rem;
-  }
 
-  &__caption {
-    text-transform: capitalize;
-    margin: 0 0 1rem;
-  }
+    // TILE CONTENT
+    & .content {
+      //
+      &__caption {
+        text-transform: capitalize;
+        margin: 0 0 1rem;
+      }
 
-  &__description {
-    margin: 0 0 0.6rem;
-    font-weight: 700;
-    font-size: 0.8rem;
-  }
+      &__description {
+        margin: 0 0 0.6rem;
+        font-weight: 700;
+        font-size: 0.8rem;
+      }
 
-  &__text {
-    font-style: italic;
-    font-size: 0.85rem;
-    margin: 0 0 0.6rem;
+      &__text {
+        font-style: italic;
+        font-size: 0.85rem;
+        margin: 0 0 0.6rem;
 
-    &:last-child {
-      margin-bottom: 0;
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
     }
   }
 }
