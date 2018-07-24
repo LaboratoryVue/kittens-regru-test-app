@@ -11,8 +11,10 @@ const state = {
 
 const mutations = {
   INIT_TILES(state) {
+    // get tiles from local file
     const temp = tiles.tiles;
     if (!temp) return;
+    // get images from unsplash
     const config = {
       params: {
         client_id:
@@ -23,9 +25,11 @@ const mutations = {
       }
     };
     axios.get('photos', config).then(response => {
+      // add urls from unsplash to tiles
       for (let i = 0; i < temp.length; i += 1) {
         temp[i].urls = response.data.results[i].urls;
       }
+      // init tiles in state
       state.tiles = temp;
     });
   }

@@ -33,6 +33,7 @@ export default {
   padding: 2rem 1rem;
   background-position: center;
   background-size: cover;
+  min-height: 350px;
 
   // PREVIEW BODY
   &__body {
@@ -89,6 +90,11 @@ export default {
 
         &:hover {
           background-color: darken(lightgrey, 15%);
+        }
+
+        &:focus,
+        &:active {
+          outline: none;
         }
       }
     }

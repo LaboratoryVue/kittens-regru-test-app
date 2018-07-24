@@ -4,11 +4,8 @@ import App from './App.vue';
 import router from '@/router/index';
 // STORE
 import store from '@/store/index';
-// FILTERS
-import trancate from '@/filters/trancate';
 
 Vue.config.productionTip = false;
-Vue.filter('trancate', trancate);
 
 new Vue({
   router,
