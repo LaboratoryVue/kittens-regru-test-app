@@ -14,3 +14,6 @@ npm run serve
 ```
 npm run build
 ```
+### Node.js and npm
+
+Node.js (10.1.0) и npm (6.2.0)
